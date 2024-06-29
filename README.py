@@ -1,25 +1,26 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Como configurar/instalar/usar a `taskbar` no `Linux Ubuntu`
+# # Como configurar/instalar/usar o `desinstalar uma aplicação` no `Linux Ubuntu`
 # 
 # ## Resumo
 # 
-# Neste documento estão contidos os principais comandos e configurações para configurar/instalar/usar a `taskbar` no `Linux Ubuntu`.
+# Neste documento estão contidos os principais comandos e configurações para configurar/instalar/usar o `desinstalar uma aplicação` no `Linux Ubuntu`.
 # 
 # ## _Abstract_
 # 
-# _In this document are contained the main commands and settings to set up/install the `taskbar` on `Linux Ubuntu`._
+# _In this document are contained the main commands and settings to set up/install the `uninstall an application` on `Linux Ubuntu`._
 
 # ## Descrição [2]
 # 
-# ### `taskbar`
+# ### `application`
 # 
-# A `"taskbar"` ou barra de tarefas, é uma componente crucial do ambiente de área de trabalho em sistemas operacionais como o Ubuntu e o Windows. Localizada geralmente na parte inferior da tela, ela proporciona acesso rápido a aplicativos em execução, bem como a janelas abertas, tornando a navegação e a multitarefa mais convenientes. Além disso, a `"taskbar"` exibe informações essenciais, como a hora e o status do sistema, e muitas vezes inclui um menu de aplicativos ou botão Iniciar para facilitar o lançamento de novos programas e acesso às configurações do sistema. Essa funcionalidade central na interface do usuário do sistema operacional ajuda os usuários a gerenciar eficazmente suas tarefas e a interagir com seus computadores de forma eficiente.
+# Uma aplicação, ou _software_ aplicativo, refere-se a um programa de computador projetado para realizar tarefas específicas e resolver necessidades dos usuários. Essas tarefas podem variar amplamente, desde processamento de texto e planilhas até navegação na web, jogos, edição de imagens, entre outros. As aplicações são desenvolvidas para serem executadas em sistemas operacionais específicos, como Windows, macOS, Linux, Android ou iOS, e podem ser distribuídas tanto comercialmente quanto de forma gratuita.
+# 
 
-# ## 1. Como configurar/instalar/usar a `taskbar` no `Linux Ubuntu` [1][3]
+# ## 1. Como configurar/instalar/usar o `desinstalar uma aplicação` no `Linux Ubuntu` [1][3]
 # 
-# Para configurar/instalar/usar a `taskbar` no `Linux Ubuntu`, você pode seguir estes passos:
+# Para configurar/instalar/usar a `desinstalar uma aplicação` no `Linux Ubuntu`, você pode seguir estes passos:
 # 
 # 1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando: `Ctrl + Alt + T`    
 
@@ -42,23 +43,47 @@
 #     2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`: `sudo apt full-upgrade -y`
 #     
 
-# 3. Abrir o `whiskermenu`;
+# Para desinstalar uma aplicação no `Linux Ubuntu`, você pode usar o comando `apt-get` ou `dpkg`, dependendo de como você instalou o programa inicialmente. Aqui estão os passos para desinstalá-lo:
 # 
-# 4. Digitar `panel` e clicar na tecla `Enter`
+# ### 1.1 Usando `apt-get`
 # 
-# 5. Clicar na aba `Items`;
+# 1. Se você instalou o 4K Video Downloader usando o apt-get, use o seguinte comando: `sudo apt-get remove <nome_da_aplicacao>`
 # 
-# 6. Selecionar a opção `Windows Buttons`;
+# 2. Para remover também os arquivos de configuração, use: `sudo apt-get purge <nome_da_aplicacao>`
 # 
-# 7. Clicar em `Edite the currente selected item`;
-# 
-# 8. em `Appearance`, remover o `check` do `Show button labels`; [3]
-# 
-# 9. Em `Behaviour`, no campo `Window grouping`, selecione a opção ` Always`. [2]
 
-# ### 1.1 Código completo para configurar/instalar
+# ### 1.2 Usando `dpkg`
 # 
-# Para configurar/instalar/usar o `taskbar` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
+# 1. Se você instalou a aplicação usando um pacote `.deb`, você pode removê-lo com o seguinte comando: `sudo dpkg -r <nome_da_aplicacao>`
+# 
+# 2. Para remover completamente, incluindo arquivos de configuração, use: `sudo dpkg --purge <nome_da_aplicacao>`
+# 
+
+# 1.3 Usando `apt`
+# 
+# 1. Outra maneira de remover o pacote é usar o comando `apt`: `sudo apt remove <nome_da_aplicacao>`
+# 
+# 2. Para remover completamente, incluindo arquivos de configuração, use: `sudo apt purge <nome_da_aplicacao>`
+# 
+
+# In[ ]:
+
+
+## 2. Autoclean e Autoremove
+
+1. Após desinstalar o programa, é uma boa prática limpar pacotes não utilizados:
+
+```
+sudo apt-get autoremove
+sudo apt-get autoclean
+```
+
+Isso removerá a aplicação do seu sistema `Linux Ubuntu`.
+
+
+# ### 3. Código completo para configurar/instalar/usar
+# 
+# Para configurar/instalar/usar o `desinstalar uma aplicação` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
 # 
 # 1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando: `Ctrl + Alt + T`
 # 
@@ -71,9 +96,7 @@
 
 # ## Referências
 # 
-# [1] OPENAI. ***Desktop environment that stacks programs in the task bar.*** Disponível em: <https://unix.stackexchange.com/questions/224246/desktop-environment-that-stacks-programs-in-the-task-bar> (texto adaptado). StackExchange. Acessado em: 22/12/2023 11:35.
+# [1] OPENAI. ***Desinstalar uma aplicação do linux ubunru.*** Disponível em: <https://chatgpt.com/c/7eccedfc-836d-4e28-a696-be591ae9435f> (texto adaptado). StackExchange. Acessado em: 22/12/2023 11:35.
 # 
 # [2] OPENAI. ***Vs code: editor popular.*** Disponível em: <https://chat.openai.com/c/b640a25d-f8e3-4922-8a3b-ed74a2657e42> (texto adaptado). ChatGPT. Acessado em: 22/12/2023 11:36.
-# 
-# [3] DK BOSE. ***How can i get icon only "grouped modern window list" on xubuntu, that I can "pin" in panel too?.*** Disponível em: <https://askubuntu.com/questions/1173886/how-can-i-get-icon-only-grouped-modern-window-list-on-xubuntu-that-i-can-pin> (texto adaptado). StackExchange. Acessado em: 22/12/2023 11:37.
 # 
